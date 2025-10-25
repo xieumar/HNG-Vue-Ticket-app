@@ -45,7 +45,7 @@ const handleLogin = () => {
     const user = users.find(u => u.email === email.value && u.password === password.value)
 
     if (user) {
-      localStorage.setItem('loggedInUser', JSON.stringify(user))
+      localStorage.setItem('ticketapp_session', JSON.stringify(user))
       isLoggedIn.value = true
       showToast('Logged in successfully!', 'success')
       router.push('/dashboard')

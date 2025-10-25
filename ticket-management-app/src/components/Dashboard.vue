@@ -47,7 +47,7 @@
         <li v-for="ticket in tickets" :key="ticket.id" class="py-4 flex justify-between items-center">
           <div>
             <router-link :to="`/tickets/${ticket.id}`" class="text-lg font-medium text-blue-600 hover:underline">{{ ticket.title }}</router-link>
-            <p class="text-gray-500 text-sm">Status: <span :class="{'text-green-600': ticket.status === 'open', 'text-amber-600': ticket.status === 'in progress', 'text-gray-600': ticket.status === 'closed'}">{{ ticket.status }}</span></p>
+            <p class="text-gray-500 text-sm">Status: <span :class="{'text-green-600': ticket.status === 'open', 'text-amber-600': ticket.status === 'in_progress', 'text-gray-600': ticket.status === 'closed'}">{{ ticket.status }}</span></p>
           </div>
           <router-link :to="`/tickets/${ticket.id}`" class="bg-blue-500 hover:bg-blue-600 text-white text-sm py-1 px-3 rounded shadow-md transition duration-300">View Details</router-link>
         </li>
@@ -76,14 +76,14 @@ const router = useRouter()
 
 const totalTickets = computed(() => props.tickets.length)
 const openTickets = computed(() => props.tickets.filter(t => t.status === 'open').length)
-const inProgressTickets = computed(() => props.tickets.filter(t => t.status === 'in progress').length)
+const inProgressTickets = computed(() => props.tickets.filter(t => t.status === 'in_progress').length)
 const closedTickets = computed(() => props.tickets.filter(t => t.status === 'closed').length)
 
 // Data for Tickets Status Over Time (Clustered Bar Chart)
 const overTimeChartData = computed(() => {
   const dates = [...new Set(props.tickets.map(ticket => ticket.createdAt))].sort()
   const openTicketsByDay = dates.map(date => props.tickets.filter(t => t.createdAt === date && t.status === 'open').length)
-  const inProgressTicketsByDay = dates.map(date => props.tickets.filter(t => t.createdAt === date && t.status === 'in progress').length)
+  const inProgressTicketsByDay = dates.map(date => props.tickets.filter(t => t.createdAt === date && t.status === 'in_progress').length)
 
   return {
     labels: dates,

@@ -23,9 +23,9 @@ import DecorativeCircles from './components/DecorativeCircles.vue'
 
 const tickets = ref([
   { id: 1, title: 'Ticket 1', description: 'This is the first ticket', status: 'open', createdAt: '2025-10-20' },
-  { id: 2, title: 'Ticket 2', description: 'This is the second ticket', status: 'in progress', createdAt: '2025-10-21' },
+  { id: 2, title: 'Ticket 2', description: 'This is the second ticket', status: 'in_progress', createdAt: '2025-10-21' },
   { id: 3, title: 'Ticket 3', description: 'This is the third ticket', status: 'open', createdAt: '2025-10-22' },
-  { id: 4, title: 'Ticket 4', description: 'This is an in progress ticket', status: 'in progress', createdAt: '2025-10-22' },
+  { id: 4, title: 'Ticket 4', description: 'This is an in progress ticket', status: 'in_progress', createdAt: '2025-10-22' },
   { id: 5, title: 'Ticket 5', description: 'This is a closed ticket', createdAt: '2025-10-23' },
 ])
 

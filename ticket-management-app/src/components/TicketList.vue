@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-4xl mx-auto p-4">
+  <div class="max-w-4xl mx-auto p-4 pt-16">
     <div class="mb-6">
       <h1 class="text-3xl font-bold text-gray-800 mb-4">Ticket List</h1>
       <button @click="showForm = !showForm" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded shadow-md transition duration-300 mt-4">
@@ -67,8 +67,8 @@ const confirmDelete = async (ticketId) => {
 const handleToggleStatus = ({ id, status }) => {
   let newStatus = 'open'
   if (status === 'open') {
-    newStatus = 'in progress'
-  } else if (status === 'in progress') {
+    newStatus = 'in_progress'
+  } else if (status === 'in_progress') {
     newStatus = 'closed'
   } else if (status === 'closed') {
     newStatus = 'open'

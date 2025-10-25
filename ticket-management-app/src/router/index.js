@@ -35,7 +35,7 @@ const routes = [
     meta: { requiresAuth: true }
   },
   {
-    path: '/login',
+    path: '/auth/login',
     name: 'Login',
     component: Login
   },
@@ -58,10 +58,10 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  const loggedIn = localStorage.getItem('loggedInUser')
+  const loggedIn = localStorage.getItem('ticketapp_session')
 
   if (to.matched.some(record => record.meta.requiresAuth) && !loggedIn) {
-    next('/login')
+    next('/auth/login')
   } else {
     next()
   }

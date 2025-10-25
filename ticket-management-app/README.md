@@ -130,9 +130,23 @@ npm run preview
 User authentication is handled via `localStorage`.
 
 -   **Signup:** New users create an account, and their credentials (name, email, password) are stored in `localStorage` under the `users` key. The newly signed-up user is automatically logged in.
--   **Login:** Users provide email and password, which are validated against the stored `users` in `localStorage`. Upon successful login, the user's data is stored in `localStorage` under `loggedInUser`.
--   **Logout:** A dedicated logout page requires re-entering credentials for confirmation. Upon successful confirmation, `loggedInUser` is removed from `localStorage`, and the user is redirected to the landing page.
--   **Protected Routes:** Routes like `/tickets` and `/dashboard` are protected. Unauthenticated users attempting to access them will be redirected to the login page.
+-   **Login:** Users provide email and password, which are validated against the stored `users` in `localStorage`. Upon successful login, the user's data is stored in `localStorage` under `ticketapp_session`.
+-   **Logout:** The logout process now simply clears the `ticketapp_session` from `localStorage`, and the user is redirected to the landing page.
+-   **Protected Routes:** Routes like `/tickets` and `/dashboard` are protected. Unauthenticated users attempting to access them will be redirected to the login page (`/auth/login`).
+
+## Accessibility Notes
+
+-   Semantic HTML5 elements are used for better structure and accessibility.
+-   Interactive elements (buttons, links) have clear focus states.
+-   Color contrast ratios are generally maintained for readability, especially for text against backgrounds.
+-   `alt` attributes are used for images where appropriate.
+
+## Example Test User Credentials
+
+To test the authentication flow, you can sign up with any email and password. The application uses `localStorage` to store user credentials, so any registered user can log in.
+
+-   **Example Email:** `test@example.com`
+-   **Example Password:** `password123`
 
 ## Contributing
 

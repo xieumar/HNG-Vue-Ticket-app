@@ -32,7 +32,7 @@ const route = useRoute()
 const isOpen = ref(false)
 
 const showNavbar = computed(() => {
-  return route.path !== '/login' && route.path !== '/signup'
+  return route.path !== '/auth/login' && route.path !== '/signup'
 })
 
 </script>

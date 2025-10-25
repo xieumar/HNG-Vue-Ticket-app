@@ -54,7 +54,7 @@ const handleSignup = () => {
       authError.value = 'User with this email already exists. Redirecting to login...'
       showToast('User already exists. Redirecting to login...', 'warning')
       setTimeout(() => {
-        router.push('/login')
+        router.push('/auth/login')
       }, 3000)
       return
     }
@@ -68,7 +68,7 @@ const handleSignup = () => {
 
     users.push(newUser)
     localStorage.setItem('users', JSON.stringify(users))
-    localStorage.setItem('loggedInUser', JSON.stringify(newUser))
+    localStorage.setItem('ticketapp_session', JSON.stringify(newUser))
     isLoggedIn.value = true
     showToast('Account created successfully!', 'success')
     router.push('/dashboard')
