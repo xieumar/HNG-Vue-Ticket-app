@@ -48,10 +48,10 @@ Ensure you have Node.js (LTS version recommended) and npm installed.
 
 1.  **Clone the repository:**
     ```bash
-    git clone <repository-url>
+    git clone https://github.com/xieumar/HNG-Vue-Ticket-app
     cd ticket-management-app
     ```
-    *(Note: Replace `<repository-url>` with the actual URL of your repository if applicable.)*
+   
 
 2.  **Install dependencies:**
     ```bash

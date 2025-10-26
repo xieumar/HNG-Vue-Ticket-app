@@ -2,7 +2,7 @@
   <div class="flex flex-col min-h-screen">
     <div class="max-w-[1440px] mx-auto w-full flex flex-col min-h-screen">
       <Navbar />
-      <main class="flex-grow">
+      <main :class="{'pt-16': route.path !== '/'}" class="flex-grow">
         <router-view :tickets="tickets" @submit="handleSubmit" @edit="handleEdit" @delete="handleDelete" @toggle-status="handleToggleStatus" />
       </main>
       <Footer />
@@ -20,6 +20,7 @@ import Footer from './components/Footer.vue'
 import ToastNotification from './components/ToastNotification.vue'
 import ConfirmationModal from './components/ConfirmationModal.vue'
 import DecorativeCircles from './components/DecorativeCircles.vue'
+import { useRoute } from 'vue-router' // Import useRoute
 
 const tickets = ref([
   { id: 1, title: 'Ticket 1', description: 'This is the first ticket', status: 'open', createdAt: '2025-10-20' },
@@ -31,6 +32,7 @@ const tickets = ref([
 
 const editingTicket = ref(null)
 const confirmationModal = ref(null)
+const route = useRoute() // Get current route
 
 // Provide the showConfirmation function globally
 provide('showConfirmation', (options) => {
