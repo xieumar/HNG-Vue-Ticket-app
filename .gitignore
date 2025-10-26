@@ -1,0 +1,43 @@
+/node_modules
+/jspm_packages
+
+# build output
+/dist
+/build
+/out
+
+# vuepress and nuxt specific build directories (if used)
+/.vuepress/dist
+/.nuxt
+/nuxt.d.ts
+
+# production bundled files (if not in /dist)
+/public/build
+/public/hot
+
+# debugging and editor files
+.idea/
+.vscode/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.DS_Store
+
+# environment variables
+.env
+.env.*
+!.env.example
+
+# testing/coverage
+/coverage
+/.nyc_output
+/test-reports
+
+# local development files
+/temp
+/tmp
+/cypress/videos
+/cypress/screenshots
+/cache
